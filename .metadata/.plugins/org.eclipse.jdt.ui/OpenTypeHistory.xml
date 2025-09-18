@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=AuthService/C:\/Users\/DELL\/.m2\/repository\/org\/springframework\/security\/spring-security-web\/6.5.3\/spring-security-web-6.5.3.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.security=/=/maven.artifactId=/spring-security-web=/=/maven.version=/6.5.3=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.security.web.authentication(SavedRequestAwareAuthenticationSuccessHandler.class[SavedRequestAwareAuthenticationSuccessHandler" modifiers="33" timestamp="1758013065773"/>
+</typeInfoHistroy>

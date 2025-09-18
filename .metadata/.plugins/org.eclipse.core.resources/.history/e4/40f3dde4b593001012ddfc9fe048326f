@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>403 Forbidden</title>
+  <style>
+    body { background:#0d1117; color:#c9d1d9; font-family:Arial; text-align:center; padding-top:10%; }
+    h1 { font-size:5rem; color:#ff6b6b; }
+    a { color:#238636; text-decoration:none; font-weight:bold; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <h1>403</h1>
+  <h2>Access Forbidden</h2>
+  <p>You don’t have permission to view this page.</p>
+  <a href="/">Go Back Home</a>
+</body>
+</html>

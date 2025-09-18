@@ -1,0 +1,5 @@
+package com.bzf.authservice.entity;
+
+public class Users {
+
+}

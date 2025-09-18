@@ -1,0 +1,5 @@
+package com.bzf.authservice.controller;
+
+public class RegisterUsersController {
+
+}
