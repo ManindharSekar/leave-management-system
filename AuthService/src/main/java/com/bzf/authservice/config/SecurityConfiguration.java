@@ -44,11 +44,16 @@ public class SecurityConfiguration {
 	    return httpSecurity
 	            .csrf(csrf -> csrf.disable())
 	            .authorizeHttpRequests(registry -> {
-	                registry.requestMatchers("/register/**","/confirm/**","/authenticate").permitAll();
+	                registry.requestMatchers("/register/**","/confirm/**","/swagger-ui/**","/authenticate").permitAll();
 	                registry.requestMatchers("/user/**").hasRole("USER");
 	                registry.requestMatchers("/admin/**").hasRole("ADMIN");
 	            })
-	            .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
+	            .formLogin(httpSecurityFormLoginConfigurer -> {
+                    httpSecurityFormLoginConfigurer
+                            .loginPage("/login")
+                            .successHandler(new AuthenticationSuccessHandler())
+                            .permitAll();
+                })
 	            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 	            .oauth2Login(Customizer.withDefaults())
 	            

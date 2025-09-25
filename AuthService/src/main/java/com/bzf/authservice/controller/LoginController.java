@@ -20,7 +20,7 @@ import com.bzf.authservice.service.JwtService;
 import com.bzf.authservice.service.UsersService;
 
 @RestController
-public class RegisterUsersController {
+public class LoginController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -31,7 +31,7 @@ public class RegisterUsersController {
 
 	private final PasswordEncoder passwordEncoder;
 
-	RegisterUsersController(PasswordEncoder passwordEncoder) {
+	LoginController(PasswordEncoder passwordEncoder) {
 		this.passwordEncoder = passwordEncoder;
 	}
 
@@ -40,6 +40,21 @@ public class RegisterUsersController {
 
 	public void RegisterUsersController(UsersRepository userRepository) {
 		this.userRepository = userRepository;
+	}
+	
+	@GetMapping("/user/home")
+	public String handleUserHome() {
+		return "user_home";
+	}
+
+	@GetMapping("/admin/home")
+	public String handleAdminHome() {
+		return "admin_home";
+	}
+
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
 	}
 
 	@PostMapping("/register/user")
