@@ -44,13 +44,13 @@ public class SecurityConfiguration {
 	    return httpSecurity
 	            .csrf(csrf -> csrf.disable())
 	            .authorizeHttpRequests(registry -> {
-	                registry.requestMatchers("/register/**","/confirm/**","/swagger-ui/**","/authenticate").permitAll();
+	                registry.requestMatchers("/auth/register/**","/auth/confirm/**","/swagger-ui/**","/auth/authenticate").permitAll();
 	                registry.requestMatchers("/user/**").hasRole("USER");
 	                registry.requestMatchers("/admin/**").hasRole("ADMIN");
 	            })
 	            .formLogin(httpSecurityFormLoginConfigurer -> {
                     httpSecurityFormLoginConfigurer
-                            .loginPage("/login")
+                            .loginPage("/auth/login")
                             .successHandler(new AuthenticationSuccessHandler())
                             .permitAll();
                 })

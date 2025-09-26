@@ -20,6 +20,7 @@ import com.bzf.authservice.service.JwtService;
 import com.bzf.authservice.service.UsersService;
 
 @RestController
+@RequestMapping("/auth")
 public class LoginController {
 
 	@Autowired

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #34495e;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a th:href="@{/admin/home}">Home</a>
+    <a th:href="@{/admin/users}">Users</a>
+    <a th:href="@{/admin/reports}">Reports</a>
+    <a th:href="@{/logout}">Logout</a>
+</nav>
+
+<main>
+    <h2>Welcome, <span th:text="${adminName}">Admin</span>!</h2>
+
+    <div class="card">
+        <h3>System Overview</h3>
+        <p>Total Users: <span th:text="${totalUsers}">0</span></p>
+        <p>Active Sessions: <span th:text="${activeSessions}">0</span></p>
+    </div>
+
+    <div class="card">
+        <h3>Recent Activities</h3>
+        <ul>
+            <li th:each="activity : ${recentActivities}" th:text="${activity}">Sample Activity</li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Admin Panel | Powered by Spring Boot + Thymeleaf</p>
+</footer>
+</body>
+</html>

@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
+@RequestMapping("/auth")
 public class LoginUiController {
 	
 	
@@ -24,6 +26,13 @@ public class LoginUiController {
 		String forObject = restTemplate.getForObject(loginServiceUrl+"/login", String.class);
 		model.addAttribute(forObject);
 		return "loginpage/login";
+	}
+	
+	@GetMapping("/admin/home")
+	public String adminHome(Model model) {
+		String forObject = restTemplate.getForObject(loginServiceUrl+"/admin/home", String.class);
+		model.addAttribute(forObject);
+		return "loginpage/admin-home";
 	}
 
 }
